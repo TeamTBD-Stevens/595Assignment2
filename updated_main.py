@@ -25,7 +25,7 @@ def get_info(name, purpose, times):
     print("Successfully collected data.")
 
 
-def output_data(name, purpose, filename, existing_file_name: str = None):
+def output_data(name, purpose, filename):
     collect_info = pd.DataFrame({'Name': name, 'Purpose': purpose})
     try:
         file = open(filename)
