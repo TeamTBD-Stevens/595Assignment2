@@ -21,10 +21,10 @@ def get_info(url: str, times):
                     break
                 i = i + 1
         except:
-            print("Inappropriate URL at time {0}.".format(time))
-            break
-    collect_info = pd.DataFrame({'Name': name, 'Purpose': purpose})
+            sys.stderr.write("Inappropriate URL at time {0}.".format(time))
+            exit(1)
     print("Successfully collected data.")
+    collect_info = pd.DataFrame({'Name': name, 'Purpose': purpose})
     return collect_info
 
 
@@ -46,7 +46,7 @@ def output_data(collect_info, filename):
 if __name__ == '__main__':
     collect_info_df = get_info('http://3.95.249.159:8000/random_company', 50)
     # can either augment an existing file or create a new one
-    output_data(collect_info_df, 'testInpropriate.csv')
+    output_data(collect_info_df, 'collected_info.csv')
 
 
 
