@@ -24,6 +24,7 @@ def get_info(url: str, times, filename=None):
             sys.stderr.write("Inappropriate URL at time {0}.".format(time))
             exit(1)
     print("Successfully collected data.")
+    
     collect_info = pd.DataFrame({'Name': name, 'Purpose': purpose})
     if filename is not None:
         try:
